@@ -1,0 +1,3 @@
+# Lets dotnet test talk to its own test runner over localhost.
+[sandbox_workspace_write]
+network_access = true

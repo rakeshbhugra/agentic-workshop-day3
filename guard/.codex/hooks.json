@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .codex/hooks/guard.sh",
+            "commandWindows": "powershell -NoProfile -ExecutionPolicy Bypass -File .codex\\hooks\\guard.ps1",
+            "timeout": 30,
+            "statusMessage": "Checking command"
+          }
+        ]
+      }
+    ]
+  }
+}

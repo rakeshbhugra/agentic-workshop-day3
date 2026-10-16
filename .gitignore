@@ -1,0 +1,13 @@
+# .NET build output
+bin/
+obj/
+# made by the Bogus exercise
+students.csv
+# made by the Docker exercise
+leaked.txt
+# task-runner run output
+task-runner/runs/transcripts/
+task-runner/runs/last.md
+task-runner/runs/.lock
+task-runner/runs/cron.log
+.DS_Store
