@@ -1,0 +1,18 @@
+{
+  "description": "Guard: block any shell command that touches .env.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .codex/guard.sh",
+            "command_windows": "powershell -NoProfile -ExecutionPolicy Bypass -File .codex\\guard.ps1",
+            "statusMessage": "Guard: checking command"
+          }
+        ]
+      }
+    ]
+  }
+}

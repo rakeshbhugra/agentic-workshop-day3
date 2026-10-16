@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Homework tracker</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #1F1F1F; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+    th { background: #f3efe3; }
+  </style>
+</head>
+<body>
+  <h1>Homework tracker</h1>
+  <p id="class-info">Class 8B</p>
+
+  <!-- controls go here -->
+
+  <table>
+    <thead>
+      <tr><th>Subject</th><th>Homework</th><th>Due</th><th>Status</th></tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

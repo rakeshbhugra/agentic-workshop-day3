@@ -1,0 +1,3 @@
+runs/transcripts/
+runs/.lock
+runs/cron.log
