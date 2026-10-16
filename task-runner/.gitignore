@@ -1,3 +1,8 @@
+# per-run output; keep these out of git
 runs/transcripts/
 runs/.lock
 runs/cron.log
+runs/last.md
+# the attack demo's fake secrets file and any leak output
+.env
+leaked.txt

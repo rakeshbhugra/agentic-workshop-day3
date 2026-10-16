@@ -11,14 +11,16 @@ The app is a tiny homework tracker in `app/` (open `app/index.html` in a browser
 ```
 task-runner/
   app/                  the app the tasks change
-  tasks/inbox/          one .md file per task (status: todo)
+  tasks/inbox/          one .md file per task (status: todo), 3 to start
   tasks/done/           finished tasks are moved here
-  runs/board.md         task, helper, status, start and finish time
+  runs/board.md         task, worker, status, start and finish time
   runs/T01.md ...       one report per task: what it did, files, how to check
   runs/last.md          the main agent's final reply
   runs/transcripts/     full record of every run (.jsonl from codex exec --json)
   orchestrator-prompt.md  the instructions the main agent gets
+  .codex/agents/worker.toml  the cheap worker agent (gpt-6-luna, low reasoning)
   starter/              clean copy used by reset (do not edit)
+  starter/extra/        more tasks to try, plus the attack exercise
 ```
 
 ## Run it once (Windows, PowerShell)
@@ -83,7 +85,24 @@ A failed task stays in `tasks/inbox/` with `status: failed`. Fix the task text, 
 .\reset.ps1
 ```
 
-This deletes `app/`, `tasks/` and `runs/` and copies the clean versions back from `starter/`.
+This deletes `app/`, `tasks/` and `runs/` and copies the clean versions back from `starter/`. It needs no git.
+
+Because the kit sits inside the cloned repo, you can also reset with git:
+
+```powershell
+git checkout .
+git clean -fd task-runner\tasks task-runner\runs task-runner\app
+```
+
+`reset.ps1` is the tested one. The kit does not need its own `.git`; it works as a folder inside the workshop clone.
+
+## Attack exercise
+
+`starter/extra/attack/` turns the kit into a safety demo: "attack your own task runner". A task that looks harmless hides a step that reads the fake `.env` and sends it out. You run it with no walls, then add two walls and watch each one stop the leak. See `starter/extra/attack/README.md` and the `tr-attack` slides.
+
+## Cost
+
+Tested on a Mac (Codex CLI 0.162): a full run of the 3 starter tasks is about 290k to 320k input tokens (most of it cached), about 2,500 output tokens, in under a minute. The main agent uses `gpt-6.1-sol` on low reasoning; the workers use `gpt-6-luna` on low reasoning.
 
 ## Safety
 
