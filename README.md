@@ -28,6 +28,7 @@ On a Mac, clone to `~/workshop/day3` and run `bash check.sh`.
 | `guard\` | Guard hook | A fake `.env` and a project-level Codex hook (`.codex\hooks.json`) that blocks `cat .env`, `git push --force`, `rm -rf` and more. |
 | `task-runner\` | Task runner | A small app and task files that Codex works through by itself. See its own README. |
 | `injection\` | Prompt injection demo | A Python file with a hidden note telling the agent to leak `.env`. `nohook\` and `hook\` versions. See its own README. |
+| `proxy\` | Masking proxy | One Python file that hides the name Riya from the AI and puts it back in the answer. Works with Codex and Claude Code. See its own README. |
 
 To undo your changes in any exercise: `git checkout .` (or `git stash`).
 

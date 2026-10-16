@@ -1,0 +1,7 @@
+# Copy to %USERPROFILE%\.codex\proxy.config.toml (Mac: ~/.codex/), then run: codex --profile proxy
+model_provider = "masking_proxy"
+
+[model_providers.masking_proxy]
+name = "Masking proxy"
+base_url = "http://localhost:8787/codex"
+requires_openai_auth = true   # keep using your ChatGPT sign-in
